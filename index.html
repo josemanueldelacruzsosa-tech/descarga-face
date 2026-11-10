@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#14261e">
+    <meta name="description" content="Prueba un filtro de criatura fantástica que sigue tus movimientos faciales.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./assets/icon.svg">
+    <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Compañero del bosque — filtro facial</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Compañero del bosque, inicio">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>HECHIZO DEL BOSQUE</span>
+        </a>
+        <span class="privacy"><span class="privacy-dot"></span> Cámara privada</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">UN FILTRO MÁGICO</p>
+        <h1 id="page-title">Conoce a tu<br><span>compañero</span></h1>
+        <p class="intro-copy">Una criatura fantástica que sigue tus gestos en tiempo real.</p>
+      </section>
+
+      <section class="camera-card" aria-label="Vista previa del filtro facial">
+        <div class="camera-stage" id="camera-stage">
+          <img class="cover-image" id="cover-image" src="./assets/criatura.jpg" alt="Criatura fantástica en un bosque encantado">
+          <video id="camera-video" class="camera-video" playsinline muted aria-label="Vista de la cámara frontal"></video>
+          <canvas id="filter-canvas" class="filter-canvas" aria-hidden="true"></canvas>
+          <div class="stage-shade"></div>
+          <div class="stage-topline">
+            <span class="live-pill" id="live-pill"><span class="live-dot"></span><span id="live-label">LISTO PARA EMPEZAR</span></span>
+            <button class="icon-button switch-button" id="switch-camera" type="button" aria-label="Cambiar cámara" title="Cambiar cámara" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10l2 2h2v9H3V9h2l2-2Zm5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/></svg>
+            </button>
+          </div>
+          <div class="stage-message" id="stage-message">
+            <div class="sparkle" aria-hidden="true">✦</div>
+            <p>Tu aventura<br>empieza aquí</p>
+          </div>
+          <div class="stage-bottom">
+            <span class="hint" id="stage-hint">Activa la cámara para probar el filtro</span>
+            <span class="tracking-indicator" id="tracking-indicator" hidden><span></span> ROSTRO EN SEGUIMIENTO</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="controls">
+        <button class="primary-button" id="start-button" type="button">
+          <svg class="camera-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5 7 8H4.5A1.5 1.5 0 0 0 3 9.5v9A1.5 1.5 0 0 0 4.5 20h15a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 19.5 8H17l-1.5-2.5h-7ZM12 17a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"/></svg>
+          <span>Probar con mi cámara</span>
+        </button>
+        <p class="status-message" id="status-message" role="status" aria-live="polite">No se guarda ni se envía ningún vídeo.</p>
+      </div>
+
+      <footer class="footer">
+        <span class="footer-icon" aria-hidden="true">✧</span>
+        <span>Hecho para jugar. Solo tú y tu criatura.</span>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

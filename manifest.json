@@ -1,0 +1,20 @@
+{
+  "name": "Compañero del bosque — filtro facial",
+  "short_name": "Compañero",
+  "description": "Un filtro mágico de criatura que sigue tu rostro.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#14261e",
+  "theme_color": "#14261e",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
